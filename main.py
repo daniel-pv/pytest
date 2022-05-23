@@ -1,44 +1,15 @@
-def criptText(text):
-    print('Text to encript: ' + text)
-    finalText = ''
-    for letter in text:
-        ascii = ord(letter)
-        ascii += 1
-        finalText += chr(ascii)
-    return finalText
-    
-def decriptText(text):
-    print('Text to decript: ' + text)
-    finalText = ''
-    for letter in text:
-        ascii = ord(letter)
-        ascii -= 1
-        finalText += chr(ascii)
-    return finalText
+from Mission import Mission
 
-def criptFile():
-    file = open('text.txt','r')
-    text = file.read()
-    file.close()
-    cripedtText = criptText(text)
-    file = open('text.txt', 'w')
-    file.write(cripedtText)
-    file.close()
-    
-def decriptFile():
-    file = open('text.txt','r')
-    text = file.read()
-    file.close()
-    cripedtText = decriptText(text)
-    file = open('text.txt', 'w')
-    file.write(cripedtText)
-    file.close()
-    
-#criptFile()
+# Some hints:
+# Convert a number in the string with str(n)
 
-#result = decriptText('Txexxxtxox xpxrxuxexbxax xpxaxrxax xexnxcxrxixpxtxaxrx')
-#file = open('text.txt', 'w')
-#file.write(result)
-#file.close()
+# These "asserts" using only for self-checking and not necessary for auto-testing
+if __name__ == '__main__':
+    print('Example:')
+    print(list(Mission.replace_first([1, 2, 3, 4])))
 
-decriptFile()
+    # These "asserts" are used for self-checking and not for an auto-testing
+    assert list(Mission.replace_first([1, 2, 3, 4])) == [2, 3, 4, 1]
+    assert list(Mission.replace_first([1])) == [1]
+    assert list(Mission.replace_first([])) == []
+    print("Coding complete? Click 'Check' to earn cool rewards!")
